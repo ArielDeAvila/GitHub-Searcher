@@ -1,0 +1,55 @@
+.container {
+    display: grid;
+    grid-template-rows: auto 2em;
+    justify-content: center;
+}
+
+.selected {
+    box-shadow: 0 0 5px lightblue !important;
+}
+
+.unSelected {
+    box-shadow: none;
+}
+
+.form-search{
+    border: 2px solid grey;
+    border-radius: 2em;
+    width: 350px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 85% auto auto;
+    justify-content: center;
+}
+
+.form-search button{
+    background-color: white;
+    cursor: pointer;
+    border-color: white;
+    border-style: none;
+    border-width: 0;
+}
+
+.form-search input{
+    border-color: white;
+    border-style: none;
+    border-width: 0;
+    outline: none;
+    background-color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-text-fill-color: black;
+    -webkit-box-shadow: 0 0 0px 40rem #ffff inset;
+}
+
+.alert{
+    color: crimson;
+    margin-top: 0.5em;
+    padding-left: 0.5em;
+    font-size: medium;
+    
+}
+

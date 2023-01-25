@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="left-container">
+        <p class="bg-mark login-name">{{user.login | uppercase}}</p>
+        <img class="avatar" src="{{user.avatar_url}}" alt="avatar user">
+        <p class="bg-mark">{{user.created_at | date : 'EEE MMM d y' | uppercase}}</p>
+    </div>
+    <div class="rigth-container">
+        <h2>{{user.name}}</h2>
+        <div class="second-row">
+            <p>
+                <i class="fa-solid fa-location-dot"></i>&nbsp;{{user.location}}
+            </p>
+            <p><i class="fa-brands fa-twitter"></i>&nbsp;{{user.twitter_username}}</p>
+        </div>
+        <div class="link">
+            <i class="fa-solid fa-blog"></i>&nbsp;
+            <a *ngIf="user.blog" href="{{user.blog}}" target="_blank" rel="noopener noreferrer">{{user.blog}}</a>
+            <span *ngIf="!user.blog">not available</span>
+        </div>
+        <div class="info">
+            <div>
+                <p>REPOS</p>
+                <i class="fa-solid fa-code-branch fa-2xl"></i>
+                <p>{{user.public_repos}}</p>
+            </div>
+            <div>
+                <p>FOLLOWERS</p>
+                <i class="fa-solid fa-users fa-2xl"></i>
+                <p>{{user.followers}}</p>
+            </div>
+            <div>
+                <p>FOLLOWING</p>
+                <i class="fa-solid fa-user-group fa-2xl"></i>
+                <p>{{user.following}}</p>
+            </div>
+        </div>
+    </div>
+</div>

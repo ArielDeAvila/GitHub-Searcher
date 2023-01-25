@@ -1,0 +1,28 @@
+<div class="container">
+    <form class="form-search" [formGroup]="searchForm" (submit)="OnSubmit()"
+            [ngClass]="{
+                'selected': focus==true,
+                'unSelected': focus==false
+            }">
+        <input type="text" name="userName" id="userName" placeholder="User name..." required formControlName="userName"
+            #userName (focus)="focus=true" (blur)="focus=false">
+        <i class="fa-brands fa-github"></i>
+        <button type="submit" 
+            [disabled]="!searchForm.get('userName')?.dirty || searchForm.get('userName')?.errors?.['required']">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </form>
+    <span class="alert"
+        *ngIf="searchForm.get('userName')?.touched && searchForm.get('userName')?.errors?.['required']">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        This field is
+        required.
+    </span>
+    <span class="alert" *ngIf="msgError && !searchForm.get('userName')?.errors?.['required']">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        {{msgError}}.
+    </span>
+    
+</div>
+
+
